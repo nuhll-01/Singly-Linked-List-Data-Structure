@@ -36,19 +36,7 @@ Because 'head' now reference 'node1'
 Our Linked List would visually look like this now... 
 
 
-head(data = 10)
-
-     |
-   \ | /
-     v
-     
-node1(data = 20)
-
-     |
-   \ | /
-     v
-     
-tail(data = 30)
+head(data = 10)   -->   node1(data =  20)   -->   tail(data = 30)
 
 'head' references the next node 'node1' and 'node1' will also reference its next node 'tail' - This essentially <strong>LINKS</strong> the objects together. 
 I hope you understand what I'm trying to get at here, but the data structure should follow it's intended implementation.
