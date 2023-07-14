@@ -9,7 +9,7 @@ After recently implementing the basics of the ArrayList data structure, I've now
 As of the time of writing this file, I've spent roughly over 7 hours in total studying the basic fundamentals of the Linked List.
 
 Basic Fundamentals:
-  - Creationg of the 'Node' Class
+  - Creating of the 'Node' Class
   - Instance variables (i.e. data, link)
   - Methods for manipulating nodes (i.e. setLink, setData, addNodeAfter, etc)
 
