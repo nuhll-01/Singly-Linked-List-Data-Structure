@@ -19,6 +19,13 @@ public class Main {
         node2.setLink(node3);
         node3.setLink(tail);
 
+        // In the following code snippet, the statement 'head = head.getLink();'
+        // Removes a node from the head of a linked list - 'head.getLink()' is a reference to the next node of the list
+
+        head = head.getLink(); // References the second node of the list (the first node is removed)
+        head = head.getLink(); // References the third node of the list (the second node is removed)
+        head = head.getLink(); // References the fourth node of the list (the third node is removed)
+
         System.out.println("Original list:");
 
         System.out.println(head.getData());
