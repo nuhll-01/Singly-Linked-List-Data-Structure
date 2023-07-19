@@ -7,6 +7,9 @@ public class Main {
         Node tail; // 'tail' is a reference to the last node
 
         Node selection; // 'selection' is a reference to the selected node
+        Node middle; // 'middle' is a reference to the middle node
+
+        Node empty = null; // empty is null, which represents an empty list.
 
         head =  new Node(10, null);
         node1 = new Node(30, null);
@@ -22,11 +25,13 @@ public class Main {
         // In the following code snippet, the statement 'head = head.getLink();'
         // Removes a node from the head of a linked list - 'head.getLink()' is a reference to the next node of the list
 
-        head = head.getLink(); // References the second node of the list (the first node is removed)
-        head = head.getLink(); // References the third node of the list (the second node is removed)
-        head = head.getLink(); // References the fourth node of the list (the third node is removed)
+        // head = head.getLink(); // References the second node of the list (the first node is removed)
+        // head = head.getLink(); // References the third node of the list (the second node is removed)
+        // head = head.getLink(); // References the fourth node of the list (the third node is removed)
 
-        System.out.println("Original list:");
+        System.out.println("The size of an empty linked list: " + Node.listLength(empty));
+
+        System.out.println("\nOriginal list:");
 
         System.out.println(head.getData());
         System.out.println(head.getLink());
@@ -43,7 +48,13 @@ public class Main {
         System.out.println(tail.getData());
         System.out.println(tail.getLink());
 
-        System.out.println("\n\nAfter adding 20 after the first node:");
+        System.out.println("\nOriginal list V2: ");
+        Node.listData(head);
+
+        System.out.println("\nThe size of our original linked list: " + Node.listLength(head));
+        System.out.println(Node.listSearch(head, 40)); // This will return a reference to the target value (its data is 40)
+
+        System.out.println("\nList after adding 20 and removing 50 and 60:");
 
         selection = head; // Set 'selection' to the first node
         selection.addNodeAfter(20); // Add a node after the first node with a value of 20
@@ -57,14 +68,22 @@ public class Main {
         System.out.println(node1.getData()); // Print the value of the third node
         System.out.println(node1.getLink()); // Print the value of the third node's link which refers to the fourth node
 
+        middle = node2;
+        middle.removeNodeAfter();
+
         System.out.println(node2.getData()); // Print the value of the fourth node
         System.out.println(node2.getLink()); // Print the value of the fourth node's link which refers to the fifth node
 
-        System.out.println(node3.getData()); // Print the value of the fifth node
-        System.out.println(node3.getLink()); // Print the value of the fifth node's link which refers to the last node
+        selection = tail;
+        selection.removeNodeAfter();
 
         System.out.println(tail.getData()); // Print the value of the last node
         System.out.println(tail.getLink()); // Print the value of the last node's link which is null
+
+
+
+
+        // tail.removeNodeAfter();
 
         // Mind the code below, it's just for reference, and it's not used in this example (it's commented out)
 
