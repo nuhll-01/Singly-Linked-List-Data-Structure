@@ -1,25 +1,4 @@
-<style>
-    .set-font-normal {
-        font-weight:normal;
-    }
-
-    .underline {
-        text-decoration: underline;
-    }
-
-    .float-left {
-        float: left;
-    }
-    
-    .float-right {
-        float: right;
-    }
-
-    .p {
-        letter-spacing: 2px; /* Increase or decrease spacing between characters */
-        line-height: 1.6; /* Adjust line spacing for better readability */
-    }
-</style>
+<link rel="stylesheet" href="styles.css">
 
 # Linked-List-Data-Structure
 
@@ -37,7 +16,7 @@ After recently implementing the basics of the ArrayList data structure, I've now
 Linked List.
 As of the time of writing this file, I've spent roughly over 7 hours in total studying the fundamentals of the Linked
 List.
-<div class="float-left">Fundamentals</div>:
+<div class="float-left">Fundamentals:</div>
 <ul>
     <li>Creation of the 'Node' Class</li>
     <li>Instance Variables</li>
