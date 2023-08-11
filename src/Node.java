@@ -29,13 +29,51 @@ public class Node {
         }
     }
 
-    public static int listLength(Node head) {
+    public static int listLength(Node head) { // Returns the number of nodes in a linked list
         int answer = 0;
         Node cursor;
         for (cursor = head; cursor != null; cursor = cursor.link) {
             answer++;
         }
         return answer;
+    }
+
+
+    // This method will return a reference to the node at the specified position in the list
+    public static Node listPosition(Node head, int position) {
+        Node cursor;
+
+        // Check for an invalid position
+        if (position <= 0) {
+            throw new IllegalArgumentException("Position must be greater than 0");
+        }
+
+        cursor = head;
+        for (int i = 1; i < position && cursor != null; i++) {
+            cursor = cursor.link;
+        }
+        return cursor;
+    }
+
+    public static Node listCopy(Node source) {
+        Node copyHead; // Head reference for the list
+        Node copyTail; // Tail reference for the list
+
+
+        if (source == null) {
+            return null;
+        }
+
+        copyHead = new Node(source.data, null);
+        copyTail = copyHead;
+
+        while (source.link != null) {
+            // Copy the next node
+            source = source.link;
+            copyTail.addNodeAfter(source.data);
+            copyTail = copyTail.link;
+        }
+        return copyHead;
     }
 
     public int getData() { // Returns the data stored in the node
