@@ -74,11 +74,35 @@ public class Main {
         System.out.println(node2.getData()); // Print the value of the fourth node
         System.out.println(node2.getLink()); // Print the value of the fourth node's link which refers to the fifth node
 
-        selection = tail;
-        selection.removeNodeAfter();
+        // Activating this code below will result in the program throwing a 'NullPointerException'
+        // Recall;
+        // that it doesn't make sense to remove the node after the tail node
+        // because there are no more nodes present.
+
+        // selection = tail;
+        // selection.removeNodeAfter();
 
         System.out.println(tail.getData()); // Print the value of the last node
         System.out.println(tail.getLink()); // Print the value of the last node's link which is null
+
+        System.out.println("\nPosition/Reference to the fourth the node: " + Node.listPosition(head, 6));
+
+        // **************************************************
+
+        Node shortList;
+        Node copy;
+
+        shortList = new Node(10, null);
+        shortList.addNodeAfter(20);
+        shortList.addNodeAfter(30);
+        shortList.addNodeAfter(40);
+        copy = Node.listCopy(shortList);
+        System.out.println("\nShort list:");
+        Node.listData(shortList);
+        System.out.println("\nCopy of short list:");
+        Node.listData(copy);
+
+
 
 
 
