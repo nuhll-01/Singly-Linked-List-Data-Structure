@@ -1,33 +1,67 @@
 public class Main {
     public static void main(String[] args) {
-        Node head; // 'head' is a reference to the first node
-        Node node1; // 'node1' is a reference to the second node
-        Node node2; // 'node2' is a reference to the third node
-        Node node3; // 'node3' is a reference to the fourth node
-        Node tail; // 'tail' is a reference to the last node
+
+        // The following code creates a linked list with five nodes
+
+        // Each references a Node.
+        // For example,
+        // 'Node head' references the first Node
+        // 'Node node1' references the second Node
+        // 'Node node2' references the third Node
+        Node head;
+        Node node1;
+        Node node2;
+        Node node3;
+        Node tail;
+
+        // **************************************************
+
+        // These Nodes below I'd consider "special"
+        // 'selection' will reference or "select" whichever Node it gets assigned
+        // 'middle' will reference the middle Node of the linked list.
+        // 'empty' will reference an empty linked list which is denoted by using "null"
 
         Node selection; // 'selection' is a reference to the selected node
         Node middle; // 'middle' is a reference to the middle node
-
         Node empty = null; // empty is null, which represents an empty list.
 
-        head =  new Node(10, null);
+        // **************************************************
+
+        // In the following code, we're allocating memory for five different instances of the 'Node' class
+
+        head =  new Node(10, null); // Instance of 'Node' class, otherwise known as an 'Object'
         node1 = new Node(30, null);
         node2 = new Node(40, null);
         node3 = new Node(50, null);
         tail =  new Node(60, null);
 
+        // **************************************************
+
+        // In the following code, after creating all of our five Nodes,
+        // We now set the link of each Node to reference the Node after it.
+        // In this example, 'head' references 'node1' and 'node1' references 'node2'
+        // These statements essentially behave in a way similar to a "chain" or "link" of containers
+
+        // head -> node1 -> node2 -> node3 -> tail -> null
         head.setLink(node1);
         node1.setLink(node2);
         node2.setLink(node3);
         node3.setLink(tail);
 
-        // In the following code snippet, the statement 'head = head.getLink();'
-        // Removes a node from the head of a linked list - 'head.getLink()' is a reference to the next node of the list
+        // **************************************************
+
+        // In the following commented code,
+        // 'head = head.getLink();' will "remove" a Node starting from the head of the list
+        // The line of code is essentially the reference to the next Node of the list.
+        // So 'head.getLink' is the reference to 'node1'
+        // so 'head = head.getLink()' means that the head of our list is now 'node1.'
+        // Or the second node to our list.
 
         // head = head.getLink(); // References the second node of the list (the first node is removed)
         // head = head.getLink(); // References the third node of the list (the second node is removed)
         // head = head.getLink(); // References the fourth node of the list (the third node is removed)
+
+        // **************************************************
 
         System.out.println("The size of an empty linked list: " + Node.listLength(empty));
 
@@ -47,6 +81,17 @@ public class Main {
 
         System.out.println(tail.getData());
         System.out.println(tail.getLink());
+
+        // In the following line code,
+        // 'Node copyList = Node.listCopy(head)'
+        // will create a copy of our original list starting from the head of the list
+        // The copy of our original list is stored in the 'copyList' reference or variable
+        Node copyList = Node.listCopy(head);
+        System.out.println("\nHead reference for the copy of the original list: " + copyList);
+        System.out.println("Copy of original list: ");
+        Node.listData(copyList); // This will print the data of the copied list
+
+        // **************************************************
 
         System.out.println("\nOriginal list V2: ");
         Node.listData(head);
@@ -91,21 +136,25 @@ public class Main {
 
         Node shortList;
         Node copy;
+        Node pointer;
 
         shortList = new Node(10, null);
         shortList.addNodeAfter(20);
         shortList.addNodeAfter(30);
         shortList.addNodeAfter(40);
+        shortList.addNodeAfter(50);
         copy = Node.listCopy(shortList);
-        System.out.println("\nShort list:");
+        System.out.println("Head reference for the original Short List: " + shortList);
+        System.out.println("Short list:");
         Node.listData(shortList);
-        System.out.println("\nCopy of short list:");
+        System.out.println("\nHead reference for the copied Short List: " + copy);
+        System.out.println("Copy of short list:");
         Node.listData(copy);
 
+        // **************************************************
 
-
-
-
+        pointer = Node.listPosition(shortList, 3);
+        System.out.println("\nSelected Node: " + pointer.getData());
 
         // tail.removeNodeAfter();
 
